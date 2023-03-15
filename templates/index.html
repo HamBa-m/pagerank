@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search Engine</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			background-color: #f1f1f1;
+		}
+		.container {
+			max-width: 600px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+			border-radius: 24px;
+			margin-top: 120px;
+		}
+		h1 {
+			font-size: 56px;
+			margin-top: 0;
+			margin-bottom: 32px;
+			font-weight: normal;
+			color: #1a73e8;
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		input[type="text"] {
+			width: 100%;
+			padding: 16px 32px;
+			margin: 0 0 32px;
+			box-sizing: border-box;
+			border: 1px solid #dfe1e5;
+			border-radius: 24px;
+			font-size: 24px;
+			background-color: #fff;
+			background-image: url('https://www.gstatic.com/images/icons/material/system/1x/search_black_24dp.png');
+			background-position: 10px center;
+			background-repeat: no-repeat;
+			padding-left: 48px;
+			outline: none;
+		}
+		input[type="text"]:focus {
+			border-color: #1a73e8;
+			box-shadow: 0 0 0 1px #1a73e8;
+		}
+		input[type="submit"] {
+			background-color: #1a73e8;
+			color: #fff;
+			padding: 16px 32px;
+			border: none;
+			border-radius: 24px;
+			cursor: pointer;
+			font-size: 24px;
+			font-weight: bold;
+			text-transform: uppercase;
+			transition: background-color 0.2s;
+		}
+		input[type="submit"]:hover {
+			background-color: #0d6efd;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<center>
+			<img src="{{ url_for('static', filename='logo.png') }}" alt="Search Engine Logo" style="width: 400px;">
+	</center>
+		<form action="/search" method="GET">
+			<input type="text" name="query" placeholder="Search MMC">
+			<input type="submit" value="MMC Search">
+		</form>
+	</div>
+</body>
+</html>

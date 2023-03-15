@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-top: 0;
+        }
+
+        .result {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .title {
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .url {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .snippet {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Search Results</h1>
+        <p>Showing {{ num_results }} results for "{{ query }}":</p>
+        {% for url in urls %}
+		<div class="result">
+			<h2 class="title" ><a href="{{ url.url }}">{{ url.title }}</a></h2>
+			<p class="url">Score: {{ url.rank }}</p>
+			<p class="snippet">{{ url.snippet }}</p>
+		</div>		
+        {% endfor %}
+    </div>
+</body>
+</html>
